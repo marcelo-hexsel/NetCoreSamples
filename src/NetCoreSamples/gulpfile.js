@@ -6,7 +6,6 @@ var gulp = require("gulp"),
   concat = require("gulp-concat"),
   cssmin = require("gulp-cssmin"),
   less = require("gulp-less"),
-  uglify = require("gulp-uglify");
   uglify = require("gulp-uglify"),
   tsc = require('gulp-typescript'),
   tscConfig = require('./tsconfig.json'),
