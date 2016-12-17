@@ -12,6 +12,8 @@ using Microsoft.Extensions.Logging;
 using NetCoreSamples.Data;
 using NetCoreSamples.Models;
 using NetCoreSamples.Services;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace NetCoreSamples
 {
@@ -47,6 +49,15 @@ namespace NetCoreSamples
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddSwaggerGen(options =>
+            {
+                options.SingleApiVersion(new Swashbuckle.Swagger.Model.Info
+                {
+                    Title = "Net Core Samples",
+                    Version = "v1"
+                });
+            });
+
             services.AddMvc();
 
             // Add application services.
@@ -72,6 +83,11 @@ namespace NetCoreSamples
             }
 
             app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "node_modules")),
+                RequestPath = "/node_modules"
+            });
 
             app.UseIdentity();
 
@@ -79,9 +95,7 @@ namespace NetCoreSamples
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapSpaFallbackRoute("spa-fallback", new { controller = "home", action = "index" });
             });
         }
     }
