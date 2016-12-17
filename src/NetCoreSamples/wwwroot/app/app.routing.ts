@@ -2,6 +2,7 @@
 
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
+import { TaskComponent } from "./task/task.component";
 
 const appRoutes: Routes = [
     {
@@ -9,6 +10,9 @@ const appRoutes: Routes = [
     },
     {
         path: "about", component: AboutComponent
+    },
+    {
+        path: "tasks", component: TaskComponent
     }
 ];
 

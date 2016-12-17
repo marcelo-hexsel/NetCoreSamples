@@ -1,4 +1,4 @@
-﻿/// <binding BeforeBuild='bundle, compile, ts-lint' Clean='clean' />
+/// <binding BeforeBuild='build' Clean='clean' ProjectOpened='install' />
 "use strict";
 
 var gulp = require("gulp"),
@@ -10,7 +10,8 @@ var gulp = require("gulp"),
   tsc = require('gulp-typescript'),
   tscConfig = require('./tsconfig.json'),
   sourcemaps = require('gulp-sourcemaps'),
-  tslint = require('gulp-tslint');
+  tslint = require('gulp-tslint'),
+  install = require("gulp-install");
 
 var paths = {
     webroot: "./wwwroot/"
@@ -27,7 +28,7 @@ paths.concatCssDest = paths.webroot + "css/site.min.css";
  *  Angular 2 Paths
  */
 paths.appTypeScript = paths.webroot + "app/**/*.ts";
-paths.typings = paths.webroot + "typings/**/*.d.ts";
+paths.typings = "./typings/**/*.d.ts";
 paths.typeScriptOutPath = paths.webroot + "app/";
 
 gulp.task("clean:js", function (cb) {
@@ -39,7 +40,6 @@ gulp.task("clean:css", function (cb) {
 });
 
 gulp.task("clean", ["clean:js", "clean:css"]);
-
 
 gulp.task("less", function () {
     return gulp.src(paths.webroot + '/less/**/*.less')
@@ -76,6 +76,11 @@ gulp.task("ts-lint", function () {
             .pipe(tslint.report());
 });
 
+gulp.task("install", function () {
+    gulp.src(['./bower.json', './package.json'])
+        .pipe(install());
+});
+
 gulp.task("compile:ts", function () {
     var sources = [
         paths.appTypeScript,
@@ -86,10 +91,12 @@ gulp.task("compile:ts", function () {
         .src(sources)
         .pipe(sourcemaps.init())
         .pipe(tsc(tscConfig))
-        .js
+        .js        
         .pipe(gulp.dest(paths.typeScriptOutPath));
 
     return result;
 });
 
 gulp.task("compile", ["compile:ts"]);
+
+gulp.task("build", ["clean", "bundle", "compile", "ts-lint"]);
