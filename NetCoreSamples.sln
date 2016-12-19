@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9298B2F1-8
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NetCoreSamples.Test", "test\NetCoreSamples.Test\NetCoreSamples.Test.xproj", "{1F999EC4-9734-4C07-AA82-096E29818ABF}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NetCoreSamples.API", "src\NetCoreSamples.API\NetCoreSamples.API.xproj", "{C15AE5DE-8E8B-4D84-BCCF-0AF5341BEBC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{1F999EC4-9734-4C07-AA82-096E29818ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F999EC4-9734-4C07-AA82-096E29818ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F999EC4-9734-4C07-AA82-096E29818ABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C15AE5DE-8E8B-4D84-BCCF-0AF5341BEBC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C15AE5DE-8E8B-4D84-BCCF-0AF5341BEBC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C15AE5DE-8E8B-4D84-BCCF-0AF5341BEBC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C15AE5DE-8E8B-4D84-BCCF-0AF5341BEBC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,5 +43,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DF7FAAE3-D47D-4F8A-BC5F-8B4CB5256180} = {00ACB0C9-14B7-4354-A343-5A5B797231EE}
 		{1F999EC4-9734-4C07-AA82-096E29818ABF} = {9298B2F1-8EC0-4170-8A51-AB5261C66A32}
+		{C15AE5DE-8E8B-4D84-BCCF-0AF5341BEBC0} = {00ACB0C9-14B7-4354-A343-5A5B797231EE}
 	EndGlobalSection
 EndGlobal
