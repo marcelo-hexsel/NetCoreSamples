@@ -7,7 +7,7 @@ import { HttpModule, JsonpModule } from "@angular/http";
 import { routing, appRoutingProviders } from "./app.routing";
 
 // DevExtreme modules
-import { DxChartModule } from "devextreme-angular";
+import { DxPieChartModule } from "devextreme-angular/ui/pie-chart";
 
 // System Component's 
 import { AppComponent }  from "./app.component";
@@ -26,7 +26,7 @@ import { DashboardService } from "./shared/services/dashboard/dashboard.service"
         HttpModule,
         JsonpModule,
         routing,
-        DxChartModule
+        DxPieChartModule
     ],
     providers: [
         appRoutingProviders,

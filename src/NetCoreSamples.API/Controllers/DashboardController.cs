@@ -21,13 +21,50 @@ namespace NetCoreSamples.API.Controllers
             var lstDashboard = new List<Dashboard>();
             lstDashboard.Add(new Dashboard()
             {
-                arg = 1,
+                arg = "Active",
                 val = 6000
             });
             lstDashboard.Add(new Dashboard()
             {
-                arg = 0,
+                arg = "Not Active",
                 val = 2000
+            });
+
+            return Ok(lstDashboard);
+        }
+
+        [HttpGet("tasks")]
+        [Produces(typeof(Dashboard[]))]
+        public IActionResult GetTasks()
+        {
+            var lstDashboard = new List<Dashboard>();
+            lstDashboard.Add(new Dashboard()
+            {
+                arg = "In preparation",
+                val = 300
+            });
+            lstDashboard.Add(new Dashboard()
+            {
+                arg = "Pending Submission",
+                val = 5000
+            });
+
+            lstDashboard.Add(new Dashboard()
+            {
+                arg = "Running",
+                val = 12500
+            });
+
+            lstDashboard.Add(new Dashboard()
+            {
+                arg = "Returned",
+                val = 10000
+            });
+
+            lstDashboard.Add(new Dashboard()
+            {
+                arg = "Cancelled",
+                val = 900
             });
 
             return Ok(lstDashboard);

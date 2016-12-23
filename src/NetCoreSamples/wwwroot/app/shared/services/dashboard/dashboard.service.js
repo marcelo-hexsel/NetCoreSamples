@@ -23,8 +23,12 @@ var DashboardService = (function () {
     function DashboardService(http) {
         this.http = http;
     }
-    DashboardService.prototype.getDashboard = function () {
+    DashboardService.prototype.getDashboardAgents = function () {
         return this.http.get("http://localhost:8090/api/dashboard")
+            .map(function (res) { return res.json(); });
+    };
+    DashboardService.prototype.getDashboardTasks = function () {
+        return this.http.get("http://localhost:8090/api/dashboard/tasks")
             .map(function (res) { return res.json(); });
     };
     DashboardService = __decorate([

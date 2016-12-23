@@ -20,11 +20,27 @@ var HomeComponent = (function () {
     HomeComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.helloHome = "Bem vindo a página home";
-        this.dashboardService.getDashboard()
+        this.dashboardService.getDashboardAgents()
             .subscribe(function (dashs) {
-            _this.dash = dashs;
-            console.log(dashs);
+            _this.dashAgents = dashs;
         });
+        this.dashboardService.getDashboardTasks()
+            .subscribe(function (dashs) {
+            _this.dashTasks = dashs;
+        });
+    };
+    HomeComponent.prototype.pointClickHandler = function (e) {
+        this.toggleVisibility(e.target);
+    };
+    HomeComponent.prototype.legendClickHandler = function (e) {
+        var arg = e.target, item = e.component.getAllSeries()[0].getPointsByArg(arg)[0];
+        this.toggleVisibility(item);
+    };
+    HomeComponent.prototype.toggleVisibility = function (item) {
+        if (item.isVisible())
+            item.hide();
+        else
+            item.show();
     };
     HomeComponent = __decorate([
         core_1.Component({

@@ -15,7 +15,7 @@ var http_1 = require("@angular/http");
 // Routers
 var app_routing_1 = require("./app.routing");
 // DevExtreme modules
-var devextreme_angular_1 = require("devextreme-angular");
+var pie_chart_1 = require("devextreme-angular/ui/pie-chart");
 // System Component's 
 var app_component_1 = require("./app.component");
 var home_component_1 = require("./home/home.component");
@@ -34,7 +34,7 @@ var AppModule = (function () {
                 http_1.HttpModule,
                 http_1.JsonpModule,
                 app_routing_1.routing,
-                devextreme_angular_1.DxChartModule
+                pie_chart_1.DxPieChartModule
             ],
             providers: [
                 app_routing_1.appRoutingProviders,

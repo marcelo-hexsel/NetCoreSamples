@@ -7,7 +7,7 @@ namespace NetCoreSamples.API.Model
 {
     public class Dashboard
     {
-        public int arg { get; set; }
+        public string arg { get; set; }
         public int val { get; set; }
     }
 }

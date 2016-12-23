@@ -1,19 +1,58 @@
 ﻿<style>
-    #chart {
+    #pie {
+        height: 440px;
+        width: 100%;
+    }
+
+    #pie2 {
         height: 440px;
         width: 100%;
     }
 </style>
 
 <h1>Home - {{helloHome}}</h1>
+<table align="center">
+    <tbody>
+        <tr>
+            <td>
+                <dx-pie-chart id="pie"
+                              title="Agents"
+                              palette="bright"
+                              [dataSource]="dashAgents"
+                              (onPointClick)="pointClickHandler($event)"
+                              (onLegendClick)="legendClickHandler($event)">
+                    <dxi-series argumentField="arg"
+                                valueField="val">
+                        <dxo-label [visible]="true">
+                            <dxo-connector [visible]="true"
+                                           [width]="1"></dxo-connector>
+                        </dxo-label>
+                    </dxi-series>
+                    <dxo-size [width]="500"></dxo-size>
+                    <dxo-export [enabled]="true"></dxo-export>
+                </dx-pie-chart>
+            </td>
+            <td>
+                <dx-pie-chart id="pie2"
+                              title="Tasks"
+                              palette="violet"
+                              [dataSource]="dashTasks"
+                              (onPointClick)="pointClickHandler($event)"
+                              (onLegendClick)="legendClickHandler($event)">
+                    <dxi-series argumentField="arg"
+                                valueField="val">
+                        <dxo-label [visible]="true">
+                            <dxo-connector [visible]="true"
+                                           [width]="1"></dxo-connector>
+                        </dxo-label>
+                    </dxi-series>
+                    <dxo-size [width]="500"></dxo-size>
+                    <dxo-export [enabled]="true"></dxo-export>
+                </dx-pie-chart>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
-<dx-chart id="chart" title="Agents" [dataSource]="dash">
-    <dxo-legend [visible]="false"></dxo-legend>
-    <dxo-series type="bar"></dxo-series>
-    <dxo-argument-axis [tickInterval]="1"></dxo-argument-axis>
-    <dxo-value-axis>
-        <dxo-label>
-            <dxo-format type="millions"></dxo-format>
-        </dxo-label>
-    </dxo-value-axis>
-</dx-chart>
+
+
