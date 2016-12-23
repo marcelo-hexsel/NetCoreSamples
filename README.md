@@ -2,7 +2,17 @@
 
 Samples os what can be done in asp.net core 1.0
 
-# Windows
+## Prerequisites
+[Node.js and npm](https://docs.npmjs.com/getting-started/installing-node) are required.
+The app was build using TypeScript and Gulp. 
+   Run `npm install -g typescript@~2.0.10` to install it.
+   Run `npm install -g gulp@3.8.11` to install it.
+   
+## Required packages
+Run `npm install` or `gulp install` to install required node packages.
+
+## Windows
+
 1 - Visual Studio Community 2015 (Update 3)
 
 2 - To compile Angular 2.2.4 with Visual Studio Community 2015, you need to install TypeScript 2.0 for VS: 
@@ -12,23 +22,17 @@ Samples os what can be done in asp.net core 1.0
 
 5 - Build and Run the Application.
 
-# Linux or Mac
+## Linux or Mac
 
 1 - Visual Studio Code or an editor of your choice.
 
-2 - Install TypeScript run the command: "npm install -g typescript@~2.0.10".
+2 - After run `gulp build` command to compile the source code.
 
-3 - Install Gulp run the command: "npm install -g gulp@3.8.11".
+3 - Run `donet restore` and `donet build`.
 
-4 - After run "npm install" to download the modules.
+4 - Run `dotnet run` to run the application.
 
-5 - After run "gulp build" command to compile the source code.
-
-6 - Run "donet restore" and "donet build".
-
-7 - Run "dotnet run" to run the application.
-
-# Application Address
+## Application Address
 
 1 - NetCoreSamples: http://*:8089
 
