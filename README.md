@@ -10,7 +10,7 @@ Samples os what can be done in asp.net core 1.0
 
 3 - After TypeScript is installed, you must delete your folder from node_modules (if exists) and wait for VS to download the modules again.
 
-5 - Build the Application.
+5 - Build and Run the Application.
 
 # Linux or Mac
 
