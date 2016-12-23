@@ -16,6 +16,7 @@ namespace NetCoreSamples.API
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
+                .UseUrls("http://*:8090")
                 .UseStartup<Startup>()
                 .Build();
 
