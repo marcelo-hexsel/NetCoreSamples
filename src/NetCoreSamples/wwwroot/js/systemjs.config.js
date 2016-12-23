@@ -20,7 +20,13 @@
             "@angular/router": "npm:@angular/router/bundles/router.umd.js",
             "@angular/forms": "npm:@angular/forms/bundles/forms.umd.js",
 
-            "rxjs": "npm:rxjs"
+            "rxjs": "npm:rxjs",
+
+            // devextreme and devextreme deps
+            "devextreme": "npm:devextreme",
+            "jquery": "npm:jquery/dist/jquery.min.js",
+            "jszip": "npm:jszip/dist/jszip.min.js",
+            "devextreme-angular": "npm:devextreme-angular"
         },
         // packages indica para o system loader como carregar quando não há um arquivo e/ou um extensão 
         packages: {
@@ -30,6 +36,13 @@
             },
             rxjs: {
                 defaultExtension: 'js'
+            },
+            "devextreme-angular": {
+                main: "index.js",
+                defaultExtension: "js"
+            },
+            "devextreme": {
+                defaultExtension: "js"
             }
         }
     });

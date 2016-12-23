@@ -12,7 +12,6 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = require("@angular/core");
-var core_2 = require("@angular/core");
 var task_service_1 = require("../shared/services/task/task.service");
 var TaskComponent = (function () {
     function TaskComponent(taskService) {
@@ -28,7 +27,7 @@ var TaskComponent = (function () {
             moduleId: module.id,
             templateUrl: "task.component.html"
         }),
-        __param(0, core_2.Inject(task_service_1.TaskService)), 
+        __param(0, core_1.Inject(task_service_1.TaskService)), 
         __metadata('design:paramtypes', [task_service_1.TaskService])
     ], TaskComponent);
     return TaskComponent;

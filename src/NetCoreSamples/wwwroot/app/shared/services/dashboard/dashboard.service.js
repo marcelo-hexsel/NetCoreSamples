@@ -12,29 +12,27 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = require("@angular/core");
-var dashboard_service_1 = require("../shared/services/dashboard/dashboard.service");
-var HomeComponent = (function () {
-    function HomeComponent(dashboardService) {
-        this.dashboardService = dashboardService;
+var http_1 = require("@angular/http");
+var Dashboard = (function () {
+    function Dashboard() {
     }
-    HomeComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.helloHome = "Bem vindo a página home";
-        this.dashboardService.getDashboard()
-            .subscribe(function (dashs) {
-            _this.dash = dashs;
-            console.log(dashs);
-        });
-    };
-    HomeComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            templateUrl: "home.component.html"
-        }),
-        __param(0, core_1.Inject(dashboard_service_1.DashboardService)), 
-        __metadata('design:paramtypes', [dashboard_service_1.DashboardService])
-    ], HomeComponent);
-    return HomeComponent;
+    return Dashboard;
 }());
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map
+exports.Dashboard = Dashboard;
+var DashboardService = (function () {
+    function DashboardService(http) {
+        this.http = http;
+    }
+    DashboardService.prototype.getDashboard = function () {
+        return this.http.get("http://localhost:8090/api/dashboard")
+            .map(function (res) { return res.json(); });
+    };
+    DashboardService = __decorate([
+        core_1.Injectable(),
+        __param(0, core_1.Inject(http_1.Http)), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], DashboardService);
+    return DashboardService;
+}());
+exports.DashboardService = DashboardService;
+//# sourceMappingURL=dashboard.service.js.map

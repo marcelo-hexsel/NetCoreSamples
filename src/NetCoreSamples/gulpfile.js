@@ -28,7 +28,6 @@ paths.concatCssDest = paths.webroot + "css/site.min.css";
  *  Angular 2 Paths
  */
 paths.appTypeScript = paths.webroot + "app/**/*.ts";
-paths.typings = "./typings/**/*.d.ts";
 paths.typeScriptOutPath = paths.webroot + "app/";
 
 gulp.task("clean:js", function (cb) {
@@ -83,8 +82,7 @@ gulp.task("install", function () {
 
 gulp.task("compile:ts", function () {
     var sources = [
-        paths.appTypeScript,
-        paths.typings
+        paths.appTypeScript
     ];
 
     var result = gulp

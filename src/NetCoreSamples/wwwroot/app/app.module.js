@@ -12,12 +12,17 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
+// Routers
 var app_routing_1 = require("./app.routing");
+// DevExtreme modules
+var devextreme_angular_1 = require("devextreme-angular");
+// System Component's 
 var app_component_1 = require("./app.component");
 var home_component_1 = require("./home/home.component");
 var about_component_1 = require("./about/about.component");
 var task_component_1 = require("./task/task.component");
 var task_service_1 = require("./shared/services/task/task.service");
+var dashboard_service_1 = require("./shared/services/dashboard/dashboard.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,11 +33,13 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 http_1.JsonpModule,
-                app_routing_1.routing
+                app_routing_1.routing,
+                devextreme_angular_1.DxChartModule
             ],
             providers: [
                 app_routing_1.appRoutingProviders,
-                task_service_1.TaskService
+                task_service_1.TaskService,
+                dashboard_service_1.DashboardService
             ],
             declarations: [
                 app_component_1.AppComponent,

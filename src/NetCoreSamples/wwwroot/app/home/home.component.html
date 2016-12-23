@@ -1,1 +1,19 @@
-﻿<h1>{{helloHome}}</h1>
+﻿<style>
+    #chart {
+        height: 440px;
+        width: 100%;
+    }
+</style>
+
+<h1>Home - {{helloHome}}</h1>
+
+<dx-chart id="chart" title="Agents" [dataSource]="dash">
+    <dxo-legend [visible]="false"></dxo-legend>
+    <dxo-series type="bar"></dxo-series>
+    <dxo-argument-axis [tickInterval]="1"></dxo-argument-axis>
+    <dxo-value-axis>
+        <dxo-label>
+            <dxo-format type="millions"></dxo-format>
+        </dxo-label>
+    </dxo-value-axis>
+</dx-chart>
