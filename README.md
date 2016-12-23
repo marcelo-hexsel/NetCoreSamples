@@ -27,3 +27,9 @@ Samples os what can be done in asp.net core 1.0
 6 - Run "donet restore" and "donet build".
 
 7 - Run "dotnet run" to run the application.
+
+# Application Address
+
+1 - NetCoreSamples: http://*:8089
+
+2 - NetCoreSamples.API: http://*:8090
