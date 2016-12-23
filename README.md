@@ -26,6 +26,8 @@ Run `npm install` or `gulp install` to install required node packages.
 
 1 - Visual Studio Code or an editor of your choice.
 
+2 - Uncomment `UseUrls` in Program.cs
+
 2 - After run `gulp build` command to compile the source code.
 
 3 - Run `donet restore` and `donet build`.
